@@ -12,5 +12,6 @@ for (let i=0; i<=ingredients.length -1; i++) {
 let ingredientsList = document.createElement('li');
 ingredientsList.textContent = ingredients[i];
 ingredientsList.classList.add("item");
-document.body.appendChild(ingredientsList);
+const selectHeader = document.querySelector("ul");
+selectHeader.appendChild(ingredientsList);
 }

@@ -12,16 +12,26 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-const selectHeader = document.querySelector("ul")
-for (let i=0; i <= images.length -1; i++) {
-  let imagesList = document.createElement('li');
-  document.body.appendChild(imagesList);
-  let image = document.createElement("img");
-  image.src = images[i].url;
-  image.alt = images[i].alt;
- image.setAttribute('height', '250');
- image.setAttribute('width', '400');
- imagesList.insertAdjacentHTML("afterbegin", `${image.alt}`)
-  document.body.appendChild(image);
+const selectHeader = document.querySelector("ul");
+const a = "<img src=";
+const b = ">"
+
+const html = images.map(image => `<li>${image.alt}: ${a + image.url + b}</li>`).join("");
+selectHeader.insertAdjacentHTML("beforeend", html);
+console.log(html);
+
+
+//for (let i=0; i <= images.length -1; i++) {
+  //let imagesList = document.createElement('li');
+  //selectHeader.appendChild(imagesList);
+  //let imageS = document.createElement("img");
+  //imageS.src = images[i].url;
+  //imageS.alt = images[i].alt;
+ //imageS.setAttribute('height', '250');
+ //imageS.setAttribute('width', '400');
+ //imagesList.insertAdjacentHTML("afterbegin", `${image.alt}`)
+  //selectList.appendChild(image);
+  //const html = images.map(img => `<li>${images.alt}</li>`).join("");
+//selectHeader.insertAdjacentHTML("beforeend", html);
  
-};
+//};
